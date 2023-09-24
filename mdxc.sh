@@ -29,9 +29,10 @@ install_run_antivirus() {
     echo "Installing and running antivirus..."
     # Example commands to install and run ClamAV antivirus
     sudo apt update
-    sudo apt install clamav
+    sudo apt install clamav clamav-daemon
     sudo systemctl start clamav-freshclam
     sudo systemctl start clamav-daemon
+    clamscan -r /
 }
 
 # Function to clear the cache
